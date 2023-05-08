@@ -1,0 +1,30 @@
+{% load static %}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author"/>
+    <meta name="keywords" content="keywords"/>
+    <link rel="stylesheet" href="{% static 'styles.css'%}" type="text/css"/>
+    <title>合作專區</title>  <!--網頁顯示的名稱-->
+
+</head>
+<body>
+    <!--導航列-->
+    <ul id="bars">
+        <li><a href="index" id="lia">☂ 天氣預測網</a></li>
+        <li><a href="weather" id="lia">☁ 查詢天氣</a></li>
+        <li><a href="news" id="lia">☃ 天氣相關新聞</a></li>
+        <li><a href="cooperation" id="lia">❆ 合作專區</a></li>
+    </ul>
+
+    <!--插入照片-->
+    <img src="https://i.imgur.com/mieaXFY.png" id="banner">
+
+    <!--嵌入html檔(畫好的圖)-->
+    <div id="line">
+        {% include 'weatherapp/line.html' %}
+    </div>
+</body>
+</html>

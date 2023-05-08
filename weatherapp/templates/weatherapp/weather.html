@@ -1,0 +1,74 @@
+{% load static %}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author"/>
+    <meta name="keywords" content="keywords"/>
+    <link rel="stylesheet" href="{% static 'styles.css'%}" type="text/css"/>
+    <title>各地天氣</title>  <!--網頁顯示的名稱-->
+</head>
+<body>
+    <!--導航列-->
+    <ul id="bars">
+        <li><a href="index" id="lia">☂ 天氣預測網</a></li>
+        <li><a href="weather" id="lia">☁ 查詢天氣</a></li>
+        <li><a href="news" id="lia">☃ 天氣相關新聞</a></li>
+        <li><a href="cooperation" id="lia">❆ 合作專區</a></li>
+    </ul>
+
+    <!--插入照片-->
+    <img src="https://img.onl/wK9E5F" id="banner">
+    <div class="littletitle"></div>
+
+    <!--地圖+選擇城市-->
+    <div class="container">
+        <!--下拉式選單-->
+        <div id="choose">
+            <form method="post">{%csrf_token%}
+                <label class="select">
+                    <select class="input" name="city">
+                        <option value="Taiwan" selected="selected">選擇地區</option>
+                        <option value="Taiwan">台灣</option>
+                        <option value="Japan">日本</option>
+                        <option value="London">倫敦</option>
+                        <option value="Berlin">柏林</option>
+                        <option value="Amsterdam">阿姆斯特丹</option>
+                        <option value="Australia">澳洲</option>
+                        <option value="Canada">加拿大</option>
+                    </select>
+                    <input type="submit" value="Enter"/>
+                </label>
+                城市：{{city}}  <!--顯示城市名稱-->
+            </form>
+        </div>
+
+        <!--嵌入html檔(畫好的圖)-->
+        <div id="worldmap">
+            {% include 'weatherapp/map.html' %}
+        </div>
+    </div>
+
+    <!--獲取後端所傳輸的資料-->
+    <div>
+        <!--將其整合為表格-->
+        <table id="weathertable">
+            <tr>
+                <td>時間</td>
+                <td>溫度</td>
+                <td>體感溫度</td>
+                <td>濕度</td>
+            </tr>
+            {% for temp, humidity,feels_like, cnt in mylist %}  <!--將資料解壓縮-->
+            <tr>
+                <td>{{cnt}}</td>
+                <td>{{temp}}°C</td>
+                <td>{{feels_like}}°C</td>
+                <td>{{humidity}}%</td>
+            </tr>
+            {% endfor %}
+        </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+/*css檔案，用於美化html中顯示出來的資料*/
+
+body{
+    background:linear-gradient(#F1F7ED,#E0EEC6);
+    color:palevioletred;
+    font-family: "Courier New", Courier, monospace;
+    margin: 0; padding: 0;
+}
+/*body代表整體架構中通用的的格式設定*/
+
+.cover1{
+    opacity:0.8;
+    width:100%;
+    max-width: 100%;
+}
+/*設定封面圖片的透明度及位置*/
+
+h1{
+    position: absolute;
+    left:60px;
+    top:270px;
+    font-family:"Aa可爱の日系中文2万字";
+    font-size: 70px;
+    color:floralwhite;
+}
+
+#bars {
+    /*position: absolute;
+    right: 0px;
+    top:10px;*/
+    list-style-type: none;
+    padding: 0;
+    width: 200px;
+    background-color:whitesmoke;
+    align:left;
+    position:fixed;
+    right:0px;
+    top:250px;
+}
+
+#lia {
+    display: block;
+    color: #000;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+#lia:hover {
+    background-color: #555;
+    color: white;
+}
+/*設定側邊導航列的大小顏色*/
+
+p{
+    align:middle;
+}
+.container{
+    color:#F1F7ED;
+    display:flex;
+    width:100%;
+    margin-top:1rem;
+     margin-left:7px;
+}
+.todayinfo{
+     line-height:100px;
+    text-align: center;
+    justify-content: center;
+     align-items:center;
+    padding:10px;
+    width:19rem;
+    height:18rem;
+    border: 2px solid #c2a83e;
+    border-radius:50px;
+    background-color:#aecca4;
+    margin: auto;
+}
+
+
+#choose{
+    font-size:20px;
+     color:palevioletred;
+    font-family:"FOT-TsukuANARdGoS Std B";
+     line-height:100px;
+    text-align: center;
+    justify-content: center;
+    align-items:center;
+    padding:10px;
+    width:20rem;
+    height:5rem;
+    border: 2px solid #c2a83e;
+    border-radius:20px;
+    background-color:#aecca4;
+    margin: auto;
+}
+/*地圖的大小、位置*/
+#worldmap{
+    line-height:100px;
+    text-align: center;
+    justify-content: center;
+     align-items:center;
+    padding:10px;
+    width:55rem;
+    height:31rem;
+    border: 2px solid #c2a83e;
+    border-radius:20px;
+    background-color:#aecca4;
+    margin: auto;
+
+}
+
+#5d{
+    font-size:5em;
+    color:palevioletred;
+}
+
+#button{
+    color:whitesmoke;
+    background-color: #243e36;
+}
+
+
+#banner{
+     width:100%;
+    max-width: 100%;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.containerfinal{
+     line-height:100px;
+    text-align: center;
+    justify-content: center;
+     align-items:center;
+    margin:auto;
+
+    width:40%;
+}
+
+
+#singlenews{
+    background-color: #3c3c3c;
+    border-radius: 20px;
+}
+#singlenews img{
+    margin-top: 40px;
+    width:70%;
+}
+
+#singlenews h6,h3{
+    line-height: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#singlenews h3{
+    font-size: large;
+    font-style: italic;
+}
+
+#singlenews h6{
+    font-size: medium;
+}
+
+#singlenews a{
+    color:white;
+}

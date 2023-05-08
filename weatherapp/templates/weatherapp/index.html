@@ -1,0 +1,48 @@
+{% load static %}
+<!--載入static資料夾中的css設定-->
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author"/>
+    <meta name="keywords" content="keywords"/>
+    <link rel="stylesheet" href="{% static 'styles.css'%}" type="text/css"/>
+    <title>天氣預測網</title>  <!--網頁顯示的名稱-->
+
+
+</head>
+<body>
+    <!--插入隨機照片-->
+    <img src='https://source.unsplash.com/1350x400/?{{description}}' alt="image" title="天氣預測網" width="100%"  id="cover1"/>
+
+
+    <h1>☀ weather.com ☀</h1>
+
+    <!--導航列-->
+    <ul id="bars">
+        <li><a href="index" id="lia">☂ 天氣預測網</a></li>
+        <li><a href="weather" id="lia">☁ 查詢天氣</a></li>
+        <li><a href="news" id="lia">☃ 天氣相關新聞</a></li>
+        <li><a href="cooperation" id="lia">❆ 合作專區</a></li>
+    </ul>
+
+<!--獲取後端所傳輸的資料-->
+<div class='container'>
+    <div class="todayinfo">
+        <h2>{{city}}</h2>
+        <h2>{{temp}}°C</h2><!--及時載入api中的天氣資料-->
+    </div>
+    <div class="todayinfo">
+        <h2>{{description}}</h2>
+        <img src='http://openweathermap.org/img/w/{{icon}}.png'/><!--及時載入api中的天氣資料-->
+    </div>
+    <div class="todayinfo">
+        <h2>目前更新進度{{realtime_humidy}}%<br>上次更新時間{{realtime_temperature}}</h2><!--firebase資料-->
+    </div>
+</div>
+
+
+
+</body>
+</html>

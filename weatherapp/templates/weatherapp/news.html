@@ -1,0 +1,37 @@
+{% load static %}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author"/>
+    <meta name="keywords" content="keywords"/>
+    <link rel="stylesheet" href="{% static 'styles.css'%}" type="text/css"/>
+    <title>天氣新聞</title>  <!--網頁顯示的名稱-->
+</head>
+<body>
+    <!--導航列-->
+    <ul id="bars">
+       <li><a href="index" id="lia">☂ 天氣預測網</a></li>
+        <li><a href="weather" id="lia">☁ 查詢天氣</a></li>
+        <li><a href="news" id="lia">☃ 天氣相關新聞</a></li>
+        <li><a href="cooperation" id="lia">❆ 合作專區</a></li>
+    </ul>
+
+    <!--插入照片-->
+    <img src="https://img.onl/h0lbg4" id="banner">
+
+
+    <!--獲取後端所傳輸的資料-->
+    <div class="containerfinal">
+        {% for title, description, img, url in mylist %}  <!--將資料解壓縮-->
+         <div id="singlenews">
+             <a href="{{ url }}"><img src="{{ img }}" alt="image" width="500px"></a>
+        <h3>{{ title }}{{ value|linebreaks }}</h3>
+        <h6>{{ description }}{{ value|linebreaks }}</h6>
+        <a href="{{url}}">點此看本篇新聞</a>
+            </div>☀ ☁ ☂
+        {%endfor%}
+    </div>
+</body>
+</html>
